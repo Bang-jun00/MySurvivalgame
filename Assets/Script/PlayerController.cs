@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
 
         //오브젝트의 위치에 방향 속도 시간보정을 더해줌
-        transform.position += (moveInput * moveSpeed * Time.deltaTime);
+        transform.position += (moveInput.normalized * moveSpeed * Time.deltaTime);
 
     }
 
