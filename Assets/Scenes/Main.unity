@@ -356,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53cdaa2c3732954d8768ad119acbf8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1922311622}
 --- !u!1 &1710551125
 GameObject:
   m_ObjectHideFlags: 0
@@ -30449,6 +30448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1922311622}
   - component: {fileID: 1922311623}
+  - component: {fileID: 1922311624}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -30485,6 +30485,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+--- !u!95 &1922311624
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922311621}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7fc98bf994c604e4f9da269cdbbd3032, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
