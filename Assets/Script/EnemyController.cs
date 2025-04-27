@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
     
     void Start()
     {
-        target = FindObjectOfType<PlayerController>().transform;
+        target = PlayerHP.instance.transform;
     }
 
     
