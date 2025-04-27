@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6679429574082994003
+--- !u!1 &4133415715106323380
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4838800675067050692}
-  - component: {fileID: 8969685475491655601}
-  - component: {fileID: 6090738411579091614}
-  - component: {fileID: 1758625016076534840}
-  - component: {fileID: 1264975231536720816}
+  - component: {fileID: 1834410316837671900}
+  - component: {fileID: 1501234004666682666}
+  - component: {fileID: 2608687349572512059}
+  - component: {fileID: 1016622479246558326}
+  - component: {fileID: 718623322111994607}
   m_Layer: 0
-  m_Name: Enemy-GreenBee
+  m_Name: Enemy4-Death Phantom
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4838800675067050692
+--- !u!4 &1834410316837671900
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679429574082994003}
+  m_GameObject: {fileID: 4133415715106323380}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 0.44, z: 0.0038005998}
+  m_LocalPosition: {x: -3.76, y: -0, z: 0.0038005998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3995543170549374061}
+  - {fileID: 6556149878674557622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8969685475491655601
+--- !u!58 &1501234004666682666
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679429574082994003}
+  m_GameObject: {fileID: 4133415715106323380}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -71,14 +71,14 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!50 &6090738411579091614
+--- !u!50 &2608687349572512059
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679429574082994003}
+  m_GameObject: {fileID: 4133415715106323380}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -98,40 +98,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1758625016076534840
+--- !u!114 &1016622479246558326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679429574082994003}
+  m_GameObject: {fileID: 4133415715106323380}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8100241d41715b543a436bd365bf5b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  enemyPool: {fileID: 0}
+  damage: 19
   hitWaitTime: 1
-  rb: {fileID: 6090738411579091614}
-  moveSpeed: 1
-  health: 30
---- !u!114 &1264975231536720816
+  rb: {fileID: 2608687349572512059}
+  moveSpeed: 1.5
+  health: 47
+--- !u!114 &718623322111994607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679429574082994003}
+  m_GameObject: {fileID: 4133415715106323380}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edd9a8f230e717d45b19a20a67fa1d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 4838800675067050692}
+  enemySprite: {fileID: 1834410316837671900}
   speed: 0.5
   minSize: 0.9
   maxSize: 1.1
---- !u!1 &8829398102740726758
+--- !u!1 &8189259088434345270
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,37 +140,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3995543170549374061}
-  - component: {fileID: 2158152236043590941}
+  - component: {fileID: 6556149878674557622}
+  - component: {fileID: 7297803861607347561}
   m_Layer: 0
-  m_Name: Bee
+  m_Name: Death Phantom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3995543170549374061
+--- !u!4 &6556149878674557622
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8829398102740726758}
+  m_GameObject: {fileID: 8189259088434345270}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4838800675067050692}
+  m_Father: {fileID: 1834410316837671900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2158152236043590941
+--- !u!212 &7297803861607347561
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8829398102740726758}
+  m_GameObject: {fileID: 8189259088434345270}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -204,7 +205,7 @@ SpriteRenderer:
   m_SortingLayerID: 97309045
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1541938654, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
+  m_Sprite: {fileID: -112153730, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
