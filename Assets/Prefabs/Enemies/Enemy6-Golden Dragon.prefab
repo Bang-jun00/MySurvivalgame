@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1311080614591024569}
   - component: {fileID: 982990187109901873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Golden Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 97309045
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1197615466, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7226199179108010284}
   - component: {fileID: 2778416267419989479}
   - component: {fileID: 4700318077371607489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy6-Golden Dragon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -201,6 +201,7 @@ MonoBehaviour:
   moveSpeed: 1.25
   health: 120
   defaultHealth: 120
+  giveExp: 50
 --- !u!114 &4700318077371607489
 MonoBehaviour:
   m_ObjectHideFlags: 0

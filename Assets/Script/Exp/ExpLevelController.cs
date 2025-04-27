@@ -8,7 +8,7 @@ public class ExpLevelController : MonoBehaviour
 
     public int currentExp; //현재 경험치
 
-    public ExpPickup pickup;
+    public ExpPickup pickup;//픽업 프리팹
 
     private void Awake()
     {
@@ -22,6 +22,7 @@ public class ExpLevelController : MonoBehaviour
         // 나중에 여기서 레벨업 체크 같은 것도 추가할 예정
     }
 
+    //픽업을 생성하는 함수
     public void SpawnExp(Vector3 position, int expValue)
     {
         ExpPickup newPickup = Instantiate(pickup, position, Quaternion.identity);

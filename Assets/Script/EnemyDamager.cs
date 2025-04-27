@@ -19,11 +19,12 @@ public class EnemyDamager : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if(collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyController>().TakeDamage(damageValue);
+            collision.GetComponent<EnemyController>().TakeDamage(damageValue);
         }
     }
+
 }

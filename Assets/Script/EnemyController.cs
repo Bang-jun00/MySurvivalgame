@@ -20,6 +20,10 @@ public class EnemyController : MonoBehaviour
     [Header("EnemyHealth")]
     public float health;
     public float defaultHealth;
+
+    [Header("EXP")]
+    public int giveExp; //드랍할 경험치
+
     
     
     void Awake()
@@ -57,7 +61,8 @@ public class EnemyController : MonoBehaviour
 
         if(health <= 0f)
         {
-            enemyPool.ReturnEnemy(gameObject);
+            ExpLevelController.instance.SpawnExp(transform.position, giveExp); // 경험치 드랍
+            enemyPool.ReturnEnemy(gameObject);// 적 풀로 리턴
         }
         
         DamageNumberController.instance.SpawnDamage(damage, transform.position);

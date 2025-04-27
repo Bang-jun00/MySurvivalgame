@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2608687349572512059}
   - component: {fileID: 1016622479246558326}
   - component: {fileID: 718623322111994607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy5-Death Phantom
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -117,6 +117,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   health: 70
   defaultHealth: 70
+  giveExp: 30
 --- !u!114 &718623322111994607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6556149878674557622}
   - component: {fileID: 7297803861607347561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Death Phantom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +205,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 97309045
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -112153730, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

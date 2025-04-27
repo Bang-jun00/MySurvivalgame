@@ -12,6 +12,8 @@ public class SpinWeapon : MonoBehaviour
     void Start()
     {
         spawnTimer = timeBetweenSpawn;
+
+        fireballSpawn.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -25,8 +27,7 @@ public class SpinWeapon : MonoBehaviour
 
             //파이어볼 생성
             Transform spawnedFireball = Instantiate(fireballSpawn, fireballSpawn.position, fireballSpawn.rotation, holder);
-
             spawnedFireball.gameObject.SetActive(true);
-        }        
+        }                    
     }
 }
