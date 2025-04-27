@@ -23,7 +23,8 @@ public class EnemyPool : MonoBehaviour
         if(enemyPool.Count > 0)
         {
             GameObject enemy = enemyPool.Pop(); //꺼내기
-            enemy.SetActive(true); //활성화 상태로
+            enemy.GetComponent<EnemyController>().ResetEnemy(); //적이 풀로 들어갔을때 초기화 되지 않은 정보를 초기화하고
+            enemy.SetActive(true); //활성화 상태로 만들어줌
             return enemy;
         }
         else

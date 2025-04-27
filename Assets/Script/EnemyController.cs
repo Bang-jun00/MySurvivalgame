@@ -18,9 +18,14 @@ public class EnemyController : MonoBehaviour
     private Transform target;
 
     [Header("EnemyHealth")]
-    public float health = 30f;
+    public float health;
+    public float defaultHealth;
     
     
+    void Awake()
+    {
+        defaultHealth = health;
+    }
     void Start()
     {
         target = PlayerHP.instance.transform;
@@ -57,6 +62,10 @@ public class EnemyController : MonoBehaviour
         
         DamageNumberController.instance.SpawnDamage(damage, transform.position);
     }
-}
 
-    
+    public void ResetEnemy()
+    {
+        health = defaultHealth; //체력 초기화
+        hitCounter = 0f;
+    }
+}    
