@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
+    public static PlayerController instance; //싱글톤
+    public float moveSpeed;
     public Animator playerAnim;
-    
 
-    
+    public float pickupRange = 1.5f;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
+
     void Update()
     {
         PlayerMove();
