@@ -61,6 +61,8 @@ public class EnemySpawner : MonoBehaviour
         enemy.transform.position = SelectSpawnPoint();
         enemy.transform.rotation = transform.rotation;
 
+        enemy.GetComponent<EnemyController>().enemyPool = this.enemyPool;
+
         spawnEnemies.Add(enemy); //리스트에 추가
     }
 

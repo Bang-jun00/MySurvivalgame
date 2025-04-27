@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1264975231536720816}
   m_Layer: 0
   m_Name: Enemy-GreenBee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   hitWaitTime: 1
   rb: {fileID: 6090738411579091614}
   moveSpeed: 1
+  health: 30
 --- !u!114 &1264975231536720816
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
-{
+{    
+    public EnemyPool enemyPool;
+    
+
     [Header("DamageDelay")]
     public float damage;
     public float hitWaitTime = 1f;
@@ -13,6 +16,9 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D rb;    
     [SerializeField] float moveSpeed;
     private Transform target;
+
+    [Header("EnemyHealth")]
+    public float health = 30f;
     
     
     void Start()
@@ -39,4 +45,16 @@ public class EnemyController : MonoBehaviour
             hitCounter = hitWaitTime;
         }
     }
+
+    public void TakeDamage(float damge)
+    {
+        health -= damge;
+
+        if(health <= 0f)
+        {
+            enemyPool.ReturnEnemy(gameObject);
+        }
+    }
+
+    
 }
