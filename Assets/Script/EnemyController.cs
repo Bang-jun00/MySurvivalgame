@@ -46,15 +46,17 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damge)
+    public void TakeDamage(float damage)
     {
-        health -= damge;
+        health -= damage;        
 
         if(health <= 0f)
         {
             enemyPool.ReturnEnemy(gameObject);
         }
+        
+        DamageNumberController.instance.SpawnDamage(damage, transform.position);
     }
+}
 
     
-}
