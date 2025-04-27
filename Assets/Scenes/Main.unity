@@ -331,10 +331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4320540c8581fa84ca7f8bb0527a888f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawn: {fileID: 6679429574082994003, guid: b907670409d298942890ae45982ce9e1, type: 3}
+  enemyPool: {fileID: 1462495316}
   timeToSpawn: 2
   minSpawn: {fileID: 1751188957}
   maxSpawn: {fileID: 389879562}
+  target: {fileID: 1922311622}
 --- !u!4 &646793055
 Transform:
   m_ObjectHideFlags: 0
@@ -506,7 +507,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1951949061
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1419783165
@@ -529,6 +530,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1462495315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462495317}
+  - component: {fileID: 1462495316}
+  m_Layer: 0
+  m_Name: EnemyPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1462495316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462495315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f8d07213b215e469461bf39cbe7989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 6679429574082994003, guid: b907670409d298942890ae45982ce9e1, type: 3}
+  poolSize: 500
+--- !u!4 &1462495317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462495315}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9589025, y: 1.2941825, z: -0.114110015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1493264248
 GameObject:
   m_ObjectHideFlags: 0
@@ -31141,3 +31188,4 @@ SceneRoots:
   - {fileID: 1922311622}
   - {fileID: 610275621}
   - {fileID: 646793055}
+  - {fileID: 1462495317}
