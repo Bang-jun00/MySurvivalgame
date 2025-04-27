@@ -9,27 +9,21 @@ public class DamageNumber : MonoBehaviour
 
     public float lifetime;
     private float lifeCounter;
-    
-    
-    void Start()
-    {
-        lifeCounter = lifetime; //초기화
-    }
-
+    public float floatSpeed;           
     
     void Update()
-    {
+    {                
         if(lifeCounter > 0)
         {
-            lifeCounter -= Time.deltaTime; //시간 흐르면 카운트 다운
+            lifeCounter -= Time.deltaTime;
+            
+            transform.position += Vector3.up * floatSpeed * Time.deltaTime; //윗 방향으로 움직이게 만들어줌
 
-            if(lifeCounter <= 0)
+            if (lifeCounter <= 0)
             {
                 Destroy(gameObject); // 시간 다 되면 삭제
             }
-        }
-
-       
+        }       
     }
 
     public void Setup(int damageDisplay)
