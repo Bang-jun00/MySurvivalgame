@@ -117,6 +117,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   health: 70
   defaultHealth: 70
+  knockBackTime: 0.5
   giveExp: 30
 --- !u!114 &718623322111994607
 MonoBehaviour:

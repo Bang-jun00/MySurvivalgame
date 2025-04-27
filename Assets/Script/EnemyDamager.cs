@@ -8,6 +8,8 @@ public class EnemyDamager : MonoBehaviour
     public float damageValue;
     [Header("LifeTime")]
     public float lifeTime;
+    [Header("KnockBack")]
+    public bool knockBack;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class EnemyDamager : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyController>().TakeDamage(damageValue);
+            collision.GetComponent<EnemyController>().TakeDamage(damageValue, knockBack);
         }
     }
 

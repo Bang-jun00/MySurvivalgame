@@ -21,6 +21,10 @@ public class EnemyController : MonoBehaviour
     public float health;
     public float defaultHealth;
 
+    [Header("KnockBack")]
+    public float knockBackTime = 0.5f;
+    private float knockBackCounter;
+
     [Header("EXP")]
     public int giveExp; //드랍할 경험치
 
@@ -38,6 +42,21 @@ public class EnemyController : MonoBehaviour
     
     void Update()
     {
+        if(knockBackCounter > 0)
+        {
+            knockBackCounter -= Time.deltaTime;
+            
+            if(moveSpeed > 0)//moveSpeed를 음수로(뒤로이동)
+            {
+                moveSpeed = -moveSpeed * 2f;
+            }
+
+            if(knockBackCounter <= 0)
+            {
+                moveSpeed = Mathf.Abs(moveSpeed * 0.5f); //Knockback 끝났으면 복구
+            }
+        }
+        
         rb.velocity = (target.position - transform.position).normalized * moveSpeed;
         
         if(hitCounter > 0f)
@@ -66,6 +85,16 @@ public class EnemyController : MonoBehaviour
         }
         
         DamageNumberController.instance.SpawnDamage(damage, transform.position);
+    }
+
+    public void TakeDamage(float damage, bool knockBack)
+    {
+        TakeDamage(damage);
+
+        if(knockBack == true)
+        {
+            knockBackCounter = knockBackTime;
+        }
     }
 
     public void ResetEnemy()
