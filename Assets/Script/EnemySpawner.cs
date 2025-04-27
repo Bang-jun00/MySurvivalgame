@@ -7,12 +7,18 @@ public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawner")]
     public EnemyPool enemyPool; // 몹 프리팹이 저장되어있는 풀 연결
-    public float timeToSpawn = 2f; //적이 생성되는 간격
+    //public float timeToSpawn = 2f; //적이 생성되는 간격
     private float spawnTimer; //타이머
     public Transform target;
 
     [Header("SpawnPoint")]
     public Transform minSpawn, maxSpawn;
+
+    [Header("WaveList")]
+    public List<WaveInfo> waves; //몬스터 웨이브를 저장할 리스트 추가
+
+    private int currentWave;
+    private float waveCounter;
     
 
     private float dispawnDistance;
@@ -21,34 +27,46 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        spawnTimer = timeToSpawn;
-        
         target  = PlayerHP.instance.transform; //싱글톤에서 플레이어 Transform 가져오기
 
         dispawnDistance = Vector3.Distance(transform.position, maxSpawn.position) + 4f;
+
+        currentWave = -1;
+        GoToNextWave();
     }
+
+
 
     
     void Update()
     {
-        spawnTimer -= Time.deltaTime;
-
-        if (spawnTimer < 0f)
-        {
-            spawnTimer = timeToSpawn;
-
-            SpawnEnemy(); //적 생성
-        }
-
         transform.position = target.position; // 스포너가 player를 따라다님
         
+        if(!PlayerHP.instance.gameObject.activeSelf)
+            return; //플레이어가 죽으면 스폰 중단
+
+        if(currentWave < waves.Count)
+        {
+            waveCounter -= Time.deltaTime;
+            
+            if(waveCounter <= 0f)
+            {
+                GoToNextWave();
+            }
+            spawnTimer -= Time.deltaTime;
+            if(spawnTimer <= 0f)
+            {
+                spawnTimer = waves[currentWave].timeBetweenSpawns;
+                SpawnEnemy();
+            }
+        }
         //적 디스폰 체크
         for (int i = spawnEnemies.Count - 1; i >= 0; i--)
         {
             GameObject enemy = spawnEnemies[i];
             if (Vector3.Distance(target.position, enemy.transform.position) > dispawnDistance)
             {
-                enemyPool.ReturnEnemy(enemy); // 풀에 돌려주고
+                waves[currentWave].enemiesPool.ReturnEnemy(enemy); // 풀에 돌려주고
                 spawnEnemies.RemoveAt(i); // 리스트에서 제거
             }
         }
@@ -57,11 +75,11 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        GameObject enemy = enemyPool.GetEnemy();
+        GameObject enemy = waves[currentWave].enemiesPool.GetEnemy();
         enemy.transform.position = SelectSpawnPoint();
         enemy.transform.rotation = transform.rotation;
 
-        enemy.GetComponent<EnemyController>().enemyPool = this.enemyPool;
+        enemy.GetComponent<EnemyController>().enemyPool = waves[currentWave].enemiesPool;
 
         spawnEnemies.Add(enemy); //리스트에 추가
     }
@@ -102,5 +120,26 @@ public class EnemySpawner : MonoBehaviour
         }
         return spawnPoint;
     }
+    void GoToNextWave()
+    {
+        currentWave++;
+
+        if (currentWave >= waves.Count)
+        {
+            currentWave = waves.Count - 1;
+        }
+
+        waveCounter = waves[currentWave].waveLength;
+        spawnTimer = waves[currentWave].timeBetweenSpawns;
+    }
+}
+
+[System.Serializable] //이걸 통해서 인스팩터에 표시해도 되는 데이터라는 것을 인식시켜줌.
+public class WaveInfo //MonoBehaviour를 상속받지 않아서 그냥 데이터를 담는 객체
+{
+    public EnemyPool enemiesPool; //어떤 풀에서 꺼낼지
+    public float waveLength; //웨이브 지속시간
+    public float timeBetweenSpawns = 1f; //스폰 간격
+    
 }
 

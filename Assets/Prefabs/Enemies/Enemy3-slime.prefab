@@ -115,7 +115,8 @@ MonoBehaviour:
   hitWaitTime: 1
   rb: {fileID: 112071019054836323}
   moveSpeed: 1.2
-  health: 40
+  health: 35
+  defaultHealth: 35
 --- !u!114 &2710822747673842191
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -110,11 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8100241d41715b543a436bd365bf5b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPool: {fileID: 0}
   damage: 5
   hitWaitTime: 1
   rb: {fileID: 6090738411579091614}
   moveSpeed: 1
-  health: 30
+  health: 15
+  defaultHealth: 15
 --- !u!114 &1264975231536720816
 MonoBehaviour:
   m_ObjectHideFlags: 0
