@@ -19,12 +19,10 @@ public class EnemyAnimation : MonoBehaviour
         speed = speed * Random.Range(0.75f, 1.25f);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         enemySprite.localScale = Vector3.MoveTowards(enemySprite.localScale, Vector3.one * activeSize, speed * Time.deltaTime);
-
-
            
 
         if(enemySprite.localScale.x == activeSize)

@@ -9,13 +9,14 @@ public class EnemySpawner : MonoBehaviour
     public EnemyPool enemyPool; // 몹 프리팹이 저장되어있는 풀 연결
     public float timeToSpawn = 2f; //적이 생성되는 간격
     private float spawnTimer; //타이머
+    public Transform target;
 
     [Header("SpawnPoint")]
     public Transform minSpawn, maxSpawn;
-    public Transform target;
+    
 
     private float dispawnDistance;
-    private List<GameObject> spawnEnemies = new List<GameObject>(); //활성화된 몹을 담을 리스트 추가
+    private List<GameObject> spawnEnemies = new List<GameObject>(); //활성화된 몹을 체크할 리스트 추가
     
 
     void Start()
@@ -48,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
             if (Vector3.Distance(target.position, enemy.transform.position) > dispawnDistance)
             {
                 enemyPool.ReturnEnemy(enemy); // 풀에 돌려주고
-                spawnEnemies.RemoveAt(i); // 리스트에서도 제거
+                spawnEnemies.RemoveAt(i); // 리스트에서 제거
             }
         }
 

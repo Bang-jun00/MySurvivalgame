@@ -7,7 +7,7 @@ public class EnemyPool : MonoBehaviour
     public GameObject enemyPrefab;
     public int poolSize = 500; //뱀서류는 몬스터 겁나 많이 나와서 풀 사이즈 넉넉하게 잡기
     private Stack<GameObject> enemyPool = new Stack<GameObject>();
-
+    
     private void Start()
     {
        for(int i = 0;  i < poolSize; i++)
