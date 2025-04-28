@@ -10,11 +10,23 @@ public class ExpLevelController : MonoBehaviour
 
     public ExpPickup pickup;//픽업 프리팹
 
+    public List<int> expLevels; //레벨별 경험치 리스트
+    public int currentLevel = 1, levelCount = 70; //현재 플레이어 레벨, 총 레벨
+
     private void Awake()
     {
         instance = this;
     }
 
+    void Start()
+    {
+        while(expLevels.Count < levelCount) //지정된 레벨 갯수 만큼 경험치 데이터 자동 생성
+        {
+            expLevels.Add(Mathf.CeilToInt(expLevels[expLevels.Count - 1] * 1.5f)); //Mathf.CeilToInt(소수점 올림)
+        }
+    }
+            
+    
     //경험치를 얻는 함수
     public void GetExp(int getExp)
     {
